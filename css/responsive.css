@@ -428,3 +428,48 @@
     display: none;
   }
 }
+/* ===== WISHES WALL RESPONSIVE ===== */
+@media (max-width: 900px) {
+  #wishes-wall {
+    padding: 80px 16px;
+  }
+  
+  .wishes-form-container {
+    padding: 30px 24px;
+  }
+  
+  .wishes-display-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wishes-form-container {
+    padding: 24px 20px;
+  }
+  
+  .photo-upload-area {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .wish-item {
+    padding: 20px 16px;
+  }
+  
+  .wish-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .wishes-count {
+    padding: 10px 20px;
+    font-size: 11px;
+  }
+  
+  .wishes-submit-btn {
+    width: 100%;
+  }
+}

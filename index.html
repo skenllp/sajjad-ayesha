@@ -605,6 +605,56 @@
         </div>
       </section>
 
+      <!-- ===== WISHES WALL SECTION ===== -->
+      <section id="wishes-wall">
+        <div class="wishes-content">
+          <div class="wishes-header">
+            <div class="wishes-monogram">
+              <span class="monogram-text">S & A</span>
+            </div>
+            <span class="section-eyebrow" data-aos="fade-up">— SEND YOUR LOVE —</span>
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Wishes Wall</h2>
+          </div>
+
+          <!-- Wishes Form -->
+          <div class="wishes-form-container" data-aos="fade-up" data-aos-delay="200">
+            <form class="wishes-form" id="wishesForm">
+              <div class="wishes-form-group">
+                <input type="text" id="wishesName" placeholder="Your name" class="wishes-input" required>
+              </div>
+
+              <div class="wishes-form-group">
+                <textarea id="wishesMessage" placeholder="Write a blessing or warm wish for Sajjad & Ayesha..." class="wishes-textarea" rows="4" required></textarea>
+              </div>
+
+              <button type="submit" class="wishes-submit-btn">
+                SEND WISH <i class="fas fa-heart"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Wishes Display - Real wishes will be loaded here -->
+          <div class="wishes-display" data-aos="fade-up" data-aos-delay="300" id="wishesDisplay" style="display: none;">
+            <div class="wishes-blessing-header">
+              <span class="section-eyebrow">— WISHES & BLESSINGS —</span>
+              <h3 class="wishes-display-title">Words From Loved Ones</h3>
+              <div class="wishes-count">
+                <i class="fas fa-heart"></i> <span id="wishesCount">0</span> BLESSINGS RECEIVED
+              </div>
+            </div>
+
+            <!-- Real Wishes List -->
+            <div class="wishes-list" id="wishesList">
+              <!-- Real wishes will be dynamically inserted here -->
+            </div>
+
+            <div class="wishes-view-more" id="viewMoreContainer" style="display: none;">
+              <button class="view-more-btn" id="viewMoreBtn">View More Wishes</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ===== WEDDING TIMELINE ===== -->
       <section id="love-story">
         <div class="love-story-content">
