@@ -13,8 +13,8 @@
   <meta property="og:description"
     content="You are warmly invited to the wedding of Sajjad Ali &amp; Ayesha Siddiqua — 17 &amp; 20 September 2026." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sajjad-ayesha.wedding/" />
-  <meta property="og:image" content="og-image.jpg" />
+  <meta property="og:url" content="https://sajjad-ayesha.vercel.app/" />
+  <meta property="og:image" content="https://sajjad-ayesha.vercel.app/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -24,9 +24,9 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sajjad Ali &amp; Ayesha Siddiqua | Wedding Invitation" />
   <meta name="twitter:description" content="Wedding Invitation • 17 &amp; 20 September 2026 • Hassan &amp; Cherkala" />
-  <meta name="twitter:image" content="og-image.jpg" />
+  <meta name="twitter:image" content="https://sajjad-ayesha.vercel.app/og-image.jpg" />
 
-  <link rel="canonical" href="https://sajjad-ayesha.wedding/" />
+  <link rel="canonical" href="https://sajjad-ayesha.vercel.app/" />
 
   <!-- Structured Data — Wedding Event -->
   <script type="application/ld+json">
@@ -80,34 +80,48 @@
     <div class="gate-image">
       <img src="assets/images/couple.jpg" alt="Sajjad and Ayesha" />
     </div>
-    <div class="gate-fade"></div>
-    <div class="gate-vignette"></div>
+    <div class="gate-overlay"></div>
 
     <button type="button" id="gate-enter" class="gate-content" aria-label="Tap to open the invitation">
-      <span class="gate-corner tl"></span>
-      <span class="gate-corner tr"></span>
-      <span class="gate-corner bl"></span>
-      <span class="gate-corner br"></span>
 
-      <span class="gate-bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
-      <span class="gate-translation">In the Name of Allah, the Most Gracious, the Most Merciful</span>
+      <!-- Corner border frame -->
+      <span class="bp-frame"></span>
 
-      <span class="gate-ornament">
-        <span class="gate-line"></span>
-        <span class="gate-diamond"></span>
-        <span class="gate-line"></span>
+      <!-- Top: Boarding Pass label -->
+      <span class="bp-top-label">BOARDING PASS · SEP 2026</span>
+
+      <!-- Monogram circle -->
+      <span class="bp-monogram">
+        <span class="bp-monogram-inner">
+          <span class="bp-monogram-names">S <em>&amp;</em> A</span>
+          <span class="bp-monogram-date">SEP 2026</span>
+        </span>
       </span>
 
-      <span class="gate-welcoming">ALI FAMILY</span>
-      <span class="gate-label">Welcomes You to the Wedding of</span>
-      <span class="gate-names">Sajjad &amp; Ayesha</span>
-      <span class="gate-date">17 &amp; 20 · September · 2026</span>
+      <!-- Dashed diagonal line -->
+      <span class="bp-dashed-line" aria-hidden="true"></span>
 
-      <span class="gate-tap">
-        <span class="gate-tap-ring"></span>
-        <span class="gate-tap-icon"><i class="fas fa-envelope-open-text" aria-hidden="true"></i></span>
-      </span>
-      <span class="gate-tap-text">Tap to Open Invitation</span>
+      <!-- With Joyful Hearts -->
+      <span class="bp-tagline">— WITH JOYFUL HEARTS —</span>
+
+      <!-- Names -->
+      <span class="bp-groom-name">Sajjad Ali</span>
+      <span class="bp-ampersand">&amp;</span>
+      <span class="bp-bride-name">Ayesha Siddiqua</span>
+
+      <!-- Subtitle -->
+      <span class="bp-subtitle">Two hearts, two families —<br />one beautiful beginning.</span>
+
+      <!-- Date -->
+      <span class="bp-date">17 SEPTEMBER 2026</span>
+      <span class="bp-date-dot">•</span>
+
+      <!-- CTA Button -->
+      <span class="bp-btn">OPEN INVITATION &nbsp;→</span>
+
+      <!-- Location -->
+      <span class="bp-location">HASSAN · KARNATAKA</span>
+
     </button>
   </div>
 
@@ -267,7 +281,7 @@
           <div class="corner-ornament tr"></div>
           <div class="corner-ornament bl"></div>
           <div class="corner-ornament br"></div>
-          <img src="assets/images/couple.jpg" alt="Sajjad Ali and Ayesha Siddiqua" loading="eager" />
+          <img src="assets/images/IMG_0018.jpg.jpeg" alt="Sajjad Ali and Ayesha Siddiqua" loading="eager" />
         </div>
       </div>
 
@@ -305,11 +319,108 @@
     </div>
   </section>
 
+  <!-- ===== OUR STORY SECTION ===== -->
+  <section id="our-story">
+    <div class="our-story-bg-pattern" aria-hidden="true"></div>
+    <div class="our-story-content">
+      <span class="section-eyebrow" data-aos="fade-up" style="color:var(--gold-light);">OUR STORY</span>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100" style="font-family:var(--font-serif); font-size:clamp(36px,7vw,72px); letter-spacing:-0.02em;">
+        WRITTEN<br />
+        IN FAITH
+      </h2>
+
+      <div class="ornament-divider" data-aos="fade-in" data-aos-delay="200">
+        <span class="ornament-line"></span>
+        <span class="ornament-flower">✿</span>
+        <span class="ornament-line right"></span>
+      </div>
+
+      <div class="our-story-text" data-aos="fade-up" data-aos-delay="300">
+        <p>
+          Two hearts from Changalai and Chorkkala — brought together by destiny, bound together by faith. 
+          Sajjad and Ayesha's journey is a beautiful testament to a love guided by the grace of Allah. 
+          With the blessings of their families and the du'as of all who love them, they now begin their 
+          forever — as one, In Sha Allah.
+        </p>
+      </div>
+
+      <!-- Couple Photo -->
+      <div class="our-story-photo" data-aos="scale-in" data-aos-delay="400">
+        <div class="story-photo-frame">
+          <img src="assets/images/story-couple.jpeg" alt="Sajjad and Ayesha - Our Story" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Our Moments Timeline -->
+      <div class="our-moments-section" data-aos="fade-up" data-aos-delay="500">
+        <h3 class="moments-heading">OUR MOMENTS</h3>
+        
+        <div class="moments-timeline">
+          <!-- Moment 1: First Meeting -->
+          <div class="moment-item" data-aos="fade-right" data-aos-delay="100">
+            <div class="moment-date">03 MAY 2026</div>
+            <div class="moment-content">
+              <h4 class="moment-title">FIRST MEETING</h4>
+              <p class="moment-description">
+                "An unforgettable evening when two hearts met for the very first time at her home, 
+                beginning a beautiful journey together."
+              </p>
+            </div>
+          </div>
+
+          <!-- Moment 2: Engagement -->
+          <div class="moment-item" data-aos="fade-left" data-aos-delay="200">
+            <div class="moment-date">14 JUNE 2026</div>
+            <div class="moment-content">
+              <h4 class="moment-title">ENGAGEMENT</h4>
+              <p class="moment-description">
+                "A joyful day as our families came together to bless our promise and celebrate 
+                the start of our forever."
+              </p>
+            </div>
+          </div>
+
+          <!-- Moment 3: Nikah -->
+          <div class="moment-item" data-aos="fade-right" data-aos-delay="300">
+            <div class="moment-date">17 SEPTEMBER 2026</div>
+            <div class="moment-content">
+              <h4 class="moment-title">NIKAH</h4>
+              <p class="moment-description">
+                "United in love and faith, we begin a lifelong journey together with Allah's blessings."
+              </p>
+            </div>
+          </div>
+
+          <!-- Moment 4: The Scarlet Affair -->
+          <div class="moment-item" data-aos="fade-left" data-aos-delay="400">
+            <div class="moment-date">20 SEPTEMBER 2026</div>
+            <div class="moment-content">
+              <h4 class="moment-title">THE SCARLET AFFAIR</h4>
+              <p class="moment-description">
+                "A celebration of love, laughter, and cherished moments shared with our family and friends."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Promise Section -->
+      <div class="our-story-promise" data-aos="fade-up" data-aos-delay="600">
+        <p class="promise-label">a promise</p>
+        <h3 class="promise-title">MADE IN<br />FAITH</h3>
+        <p class="promise-text">
+          With the blessings of their families and the grace of Allah,<br />
+          Sajjad and Ayesha begin their journey as one.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== COUPLE SECTION ===== -->
   <section id="parents">
     <div class="parents-content">
-      <span class="section-eyebrow" data-aos="fade-up">The Blessed</span>
-      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Couple</h2>
+      <span class="section-eyebrow" data-aos="fade-up">YOU ARE CORDIALLY INVITED</span>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">A Blessed Union</h2>
 
       <div class="ornament-divider" data-aos="fade-in" data-aos-delay="200">
         <span class="ornament-line"></span>
@@ -319,29 +430,41 @@
 
       <div class="love-story-banner" data-aos="fade-up" data-aos-delay="150">
         <p class="love-story-text">
-          "And of His signs is that He created for you mates that you may find tranquility in them — two hearts now unite forever."
+          With immense joy and gratitude to Allah, the families of Sajjad Ali and Ayesha Siddiqua warmly invite you and your family to celebrate their Wedding and share in the blessings of this beautiful beginning.
         </p>
       </div>
 
       <div class="parents-grid">
         <!-- Groom's Family — always first -->
-        <div class="parents-card" data-aos="fade-right">
-          <p class="parents-card-title">The Groom</p>
+        <div class="parents-card modern" data-aos="fade-up" data-aos-delay="200">
+          <div class="parents-photo-circle">
+            <img src="assets/images/groom.jpeg" alt="Sajjad Ali" loading="lazy" />
+          </div>
+          <p class="parents-card-label">THE GROOM</p>
           <span class="parents-card-name">Sajjad Ali</span>
           <div class="parents-card-parent">
-            <strong>Beloved Son of</strong>
-            Mr. SK Abbas Ali<br />&amp;<br />
-            Mrs. Zuhara Abbas Ali
+            <strong>SON OF</strong><br />
+            Mr. SK Abbas Ali<br />
+            <span class="parent-address">Ameen Manzil, Chalakkunnu, Vidya Nagar, Kasaragod</span><br />
+            &amp;<br />
+            Mrs. Zuhara Abbas Ali<br />
+            <span class="parent-address">Nalakath, Anangadi, Vallikkunn</span>
           </div>
         </div>
 
         <!-- Bride's Family -->
-        <div class="parents-card" data-aos="fade-left">
-          <p class="parents-card-title">The Bride</p>
+        <div class="parents-card modern" data-aos="fade-up" data-aos-delay="300">
+          <div class="parents-photo-circle">
+            <img src="assets/images/bride.jpeg" alt="Ayesha Siddiqua" loading="lazy" />
+          </div>
+          <p class="parents-card-label">THE BRIDE</p>
           <span class="parents-card-name">Ayesha Siddiqua</span>
           <div class="parents-card-parent">
-            <strong>Beloved Daughter of</strong>
-            Mr. Muneer Ahmed<br />&amp;<br /> Mrs. Nishath Fathima
+            <strong>DAUGHTER OF</strong><br />
+            Mr. Muneer Ahmed<br />
+            <span class="parent-address">Sahara Kitchenware, Hassan, Karnataka</span><br />
+            &amp;<br />
+            Mrs. Nishath Fathima
           </div>
         </div>
       </div>
@@ -350,6 +473,7 @@
 
   <!-- ===== EVENTS ===== -->
   <section id="events">
+    <div class="events-bg-pattern" aria-hidden="true"></div>
     <div class="events-content">
       <span class="section-eyebrow" data-aos="fade-up">Mark Your Calendar</span>
       <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Wedding Celebrations</h2>
@@ -360,116 +484,103 @@
         <span class="ornament-line right"></span>
       </div>
 
-      <div class="events-grid">
+      <div class="events-list">
 
-        <!-- ── NIKAH ── -->
-        <div class="event-card" data-aos="fade-right">
-          <div class="event-icon">
-            <i class="fas fa-mosque" aria-hidden="true"></i>
+        <!-- ── EVENT 1: NIKAH ── -->
+        <div class="event-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="event-petal petal-1">🌸</div>
+          <div class="event-petal petal-2">🌸</div>
+          <div class="event-petal petal-3">🌸</div>
+          
+          <div class="event-header">
+            <div class="event-date-badge">
+              <span class="event-day">THURSDAY</span>
+              <span class="event-date-num">17 SEPTEMBER 2026</span>
+            </div>
+            <span class="event-number">01</span>
           </div>
-          <p class="event-type">Sacred Ceremony</p>
-          <h3 class="event-title">Nikah</h3>
+          
+          <h3 class="event-name">Nikah</h3>
+          <div class="event-name-underline"></div>
 
-          <div class="event-detail">
-            <div class="event-detail-icon">
-              <i class="fas fa-calendar" aria-hidden="true"></i>
+          <div class="event-info-card">
+            <div class="event-info-row">
+              <div class="event-info-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="event-info-text">
+                <span class="event-info-label">TIME</span>
+                <span class="event-info-value">12:30 PM</span>
+              </div>
             </div>
-            <div class="event-detail-text">
-              <span class="event-detail-label">Date</span>
-              <span class="event-detail-value">Thursday, 17 September 2026</span>
-            </div>
-          </div>
 
-          <div class="event-detail">
-            <div class="event-detail-icon">
-              <i class="fas fa-moon" aria-hidden="true"></i>
-            </div>
-            <div class="event-detail-text">
-              <span class="event-detail-label">Hijri Date</span>
-              <span class="event-detail-value">1448, Rabi al-Akhir 6</span>
-            </div>
-          </div>
+            <div class="event-info-divider"></div>
 
-          <div class="event-detail">
-            <div class="event-detail-icon">
-              <i class="fas fa-clock" aria-hidden="true"></i>
-            </div>
-            <div class="event-detail-text">
-              <span class="event-detail-label">Time</span>
-              <span class="event-detail-value">12:30 PM</span>
-            </div>
-          </div>
-
-          <div class="event-detail">
-            <div class="event-detail-icon">
-              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-            </div>
-            <div class="event-detail-text">
-              <span class="event-detail-label">Venue</span>
-              <span class="event-detail-value">Nandagokula Convention<br />Centre, Hassan</span>
+            <div class="event-info-row">
+              <div class="event-info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="event-info-text">
+                <span class="event-info-label">VENUE</span>
+                <span class="event-info-value">Nandagokula Convention Centre</span>
+                <span class="event-info-location">Hassan, Karnataka</span>
+              </div>
             </div>
           </div>
 
           <a href="https://www.google.com/maps/search/?api=1&query=Nandagokula+Convention+Centre%2C+Hassan"
-            target="_blank" rel="noopener noreferrer" class="maps-btn"
-            aria-label="Open Nikah venue in Google Maps">
-            <i class="fas fa-map" aria-hidden="true"></i>
-            Open Google Maps
+            target="_blank" rel="noopener noreferrer" class="event-directions-btn">
+            <i class="fas fa-map-marker-alt"></i>
+            GET DIRECTIONS
           </a>
         </div>
 
-        <!-- ── RECEPTION ── -->
-        <div class="event-card" data-aos="fade-left">
-          <div class="event-icon event-icon--gold">
-            <i class="fas fa-star" aria-hidden="true"></i>
+        <!-- ── EVENT 2: RECEPTION ── -->
+        <div class="event-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="event-petal petal-1">🌸</div>
+          <div class="event-petal petal-2">🌸</div>
+          <div class="event-petal petal-3">🌸</div>
+          
+          <div class="event-header">
+            <div class="event-date-badge">
+              <span class="event-day">SUNDAY</span>
+              <span class="event-date-num">20 SEPTEMBER 2026</span>
+            </div>
+            <span class="event-number">02</span>
           </div>
-          <p class="event-type">Celebration</p>
-          <h3 class="event-title">Reception</h3>
+          
+          <h3 class="event-name">Reception</h3>
+          <div class="event-name-underline"></div>
 
-          <div class="event-detail">
-            <div class="event-detail-icon">
-              <i class="fas fa-calendar" aria-hidden="true"></i>
+          <div class="event-info-card">
+            <div class="event-info-row">
+              <div class="event-info-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="event-info-text">
+                <span class="event-info-label">TIME</span>
+                <span class="event-info-value">4:00 PM Onwards</span>
+              </div>
             </div>
-            <div class="event-detail-text">
-              <span class="event-detail-label">Date</span>
-              <span class="event-detail-value">Sunday, 20 September 2026</span>
+
+            <div class="event-info-divider"></div>
+
+            <div class="event-info-row">
+              <div class="event-info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="event-info-text">
+                <span class="event-info-label">VENUE</span>
+                <span class="event-info-value">Wind Valley Resort</span>
+                <span class="event-info-location">Cherkala, Kerala</span>
+              </div>
             </div>
           </div>
 
-          <div class="event-detail">
-            <div class="event-detail-icon">
-              <i class="fas fa-moon" aria-hidden="true"></i>
-            </div>
-            <div class="event-detail-text">
-              <span class="event-detail-label">Hijri Date</span>
-              <span class="event-detail-value">1448, Rabi al-Akhir 9</span>
-            </div>
-          </div>
-
-          <div class="event-detail">
-            <div class="event-detail-icon">
-              <i class="fas fa-clock" aria-hidden="true"></i>
-            </div>
-            <div class="event-detail-text">
-              <span class="event-detail-label">Time</span>
-              <span class="event-detail-value">4:00 PM Onwards</span>
-            </div>
-          </div>
-
-          <div class="event-detail">
-            <div class="event-detail-icon">
-              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-            </div>
-            <div class="event-detail-text">
-              <span class="event-detail-label">Venue</span>
-              <span class="event-detail-value">Wind Valley Resort,<br />Cherkala</span>
-            </div>
-          </div>
           <a href="https://www.google.com/maps/search/?api=1&query=Wind+Valley+Resort%2C+Cherkala"
-            target="_blank" rel="noopener noreferrer" class="maps-btn"
-            aria-label="Open Reception venue in Google Maps">
-            <i class="fas fa-map" aria-hidden="true"></i>
-            Open Google Maps
+            target="_blank" rel="noopener noreferrer" class="event-directions-btn event-directions-btn-gold">
+            <i class="fas fa-map-marker-alt"></i>
+            GET DIRECTIONS
           </a>
         </div>
 
@@ -696,6 +807,48 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ===== GET IN TOUCH SECTION ===== -->
+  <section id="contact">
+    <div class="contact-content">
+      <span class="section-eyebrow" data-aos="fade-up">— GET IN TOUCH —</span>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Any questions?</h2>
+
+      <div class="ornament-divider" data-aos="fade-in" data-aos-delay="200">
+        <span class="ornament-line"></span>
+        <span class="ornament-flower">✿</span>
+        <span class="ornament-line right"></span>
+      </div>
+
+      <p class="contact-subtitle" data-aos="fade-up" data-aos-delay="150">
+        We'd love to hear from you — reach out to us anytime.
+      </p>
+
+      <div class="contact-cards">
+        <!-- Bride's Father Contact -->
+        <a href="tel:+919731341356" class="contact-card contact-card-green" data-aos="fade-up" data-aos-delay="200">
+          <div class="contact-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="contact-info">
+            <p class="contact-label">Bride's Father (Muneer Ahmed)</p>
+            <p class="contact-number">+91 97313 41356</p>
+          </div>
+        </a>
+
+        <!-- Groom's Father Contact -->
+        <a href="tel:+919074565602" class="contact-card contact-card-gold" data-aos="fade-up" data-aos-delay="300">
+          <div class="contact-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="contact-info">
+            <p class="contact-label">Groom's Father (SK Abbas Ali)</p>
+            <p class="contact-number">+91 90745 65602</p>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 

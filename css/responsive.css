@@ -35,12 +35,17 @@
     display: block;
   }
 
-  /* Events: stack to single column on tablet */
-  .events-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
+  /* Events: already stacked, just adjust padding */
+  .event-item {
+    padding: 36px 28px;
+  }
+  
+  .event-info-card {
+    padding: 24px 24px;
+  }
+  
+  .event-number {
+    font-size: 72px;
   }
 
   .couple-grid {
@@ -244,6 +249,187 @@
 /* ===== SHORT VIEWPORTS: avoid scroll-hint overlapping hero text ===== */
 @media (max-height: 700px) {
   .hero-scroll-hint {
+    display: none;
+  }
+}
+/* ===== OUR STORY RESPONSIVE ===== */
+@media (max-width: 900px) {
+  #our-story {
+    padding: 80px 16px;
+  }
+  
+  .our-story-icons {
+    gap: 40px;
+  }
+  
+  .our-story-promise {
+    padding: 40px 24px;
+    margin-top: 60px;
+  }
+  
+  .moments-timeline {
+    padding-left: 30px;
+  }
+  
+  .moment-item {
+    padding-left: 24px;
+  }
+  
+  .moment-content {
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .our-story-icons {
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .story-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .our-story-text {
+    font-size: 16px;
+    line-height: 1.7;
+    padding: 0 8px;
+  }
+  
+  .our-story-promise {
+    padding: 32px 20px;
+  }
+  
+  .moments-timeline {
+    padding-left: 20px;
+    gap: 36px;
+  }
+  
+  .moment-item {
+    padding-left: 16px;
+  }
+  
+  .moment-item::before {
+    left: -32px;
+    width: 12px;
+    height: 12px;
+  }
+  
+  .moment-content {
+    padding: 18px 20px;
+  }
+  
+  .moment-item:hover .moment-content {
+    transform: translateX(4px);
+  }
+  
+  .our-story-photo {
+    margin: 60px auto 40px;
+  }
+  
+  .our-moments-section {
+    margin: 60px auto;
+  }
+  
+  .moments-heading {
+    margin-bottom: 40px;
+  }
+}
+
+/* ===== CONTACT SECTION RESPONSIVE ===== */
+@media (max-width: 900px) {
+  #contact {
+    padding: 80px 16px;
+  }
+  
+  .contact-card {
+    padding: 24px 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 24px;
+  }
+  
+  .contact-icon {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+  
+  .contact-info {
+    text-align: center;
+  }
+  
+  .parents-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .parents-photo-circle {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* ===== EVENTS MOBILE RESPONSIVE ===== */
+@media (max-width: 600px) {
+  #events {
+    padding: 80px 16px;
+  }
+  
+  .event-item {
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+  
+  .event-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .event-number {
+    font-size: 56px;
+    align-self: flex-end;
+    margin-top: -10px;
+  }
+  
+  .event-date-badge {
+    margin-bottom: 12px;
+  }
+  
+  .event-name {
+    font-size: 28px;
+  }
+  
+  .event-info-card {
+    padding: 20px 20px;
+  }
+  
+  .event-info-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .event-info-value {
+    font-size: 16px;
+  }
+  
+  .event-directions-btn {
+    padding: 16px 28px;
+    font-size: 12px;
+  }
+  
+  .event-petal {
+    font-size: 18px;
+  }
+  
+  .petal-2 {
     display: none;
   }
 }
