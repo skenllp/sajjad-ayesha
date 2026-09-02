@@ -1,0 +1,50 @@
+═══════════════════════════════════════════════════════════
+    FIREBASE SETUP - QUICK REFERENCE (5 Minutes)
+═══════════════════════════════════════════════════════════
+
+📋 STEPS:
+
+1. Go to: https://console.firebase.google.com/
+2. Create new project: "sajjad-ayesha-wedding"
+3. Create "Realtime Database" (Test mode)
+4. Get your config from Project Settings > Web App
+5. Paste config into: js/firebase-config.js
+
+═══════════════════════════════════════════════════════════
+
+🔧 WHAT TO REPLACE IN firebase-config.js:
+
+Find this file: js/firebase-config.js
+
+Replace ALL the "YOUR_XXX_HERE" values with your real Firebase values:
+
+❌ BEFORE (Default):
+  apiKey: "YOUR_API_KEY_HERE",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",
+  ...
+
+✅ AFTER (Your actual values from Firebase):
+  apiKey: "AIzaSyAbc123...",
+  authDomain: "sajjad-ayesha-wedding.firebaseapp.com",
+  databaseURL: "https://sajjad-ayesha-wedding-default-rtdb.firebaseio.com",
+  ...
+
+═══════════════════════════════════════════════════════════
+
+⚠️ IMPORTANT:
+- Don't forget the databaseURL (most important!)
+- Copy-paste exactly as shown in Firebase Console
+- Save the file after editing
+
+═══════════════════════════════════════════════════════════
+
+✨ RESULT:
+- Wishes saved in cloud ☁️
+- Visible on ALL phones 📱
+- Real-time updates ⚡
+- FREE forever 💰
+
+═══════════════════════════════════════════════════════════
+
+Need detailed help? Read: FIREBASE_SETUP_GUIDE.md

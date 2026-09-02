@@ -149,6 +149,230 @@
     });
   }
 
+  // ===== WISHES WALL WITH FIREBASE =====
+  function initWishesWall() {
+    var form = document.getElementById('wishesForm');
+    var wishesDisplay = document.getElementById('wishesDisplay');
+    var wishesList = document.getElementById('wishesList');
+    var wishesCount = document.getElementById('wishesCount');
+    var viewMoreContainer = document.getElementById('viewMoreContainer');
+    var viewMoreBtn = document.getElementById('viewMoreBtn');
+
+    if (!form || !wishesDisplay || !wishesList) return;
+
+    var displayLimit = 5;
+    var allWishes = [];
+    var showingAll = false;
+    var database = null;
+
+    // Check if Firebase is available
+    try {
+      database = firebase.database();
+    } catch (e) {
+      console.warn('Firebase not configured. Using localStorage fallback.');
+    }
+
+    // Format date
+    function formatDate(timestamp) {
+      var date = new Date(timestamp);
+      var months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+      var day = date.getDate();
+      var month = months[date.getMonth()];
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      return day + ' ' + month + ' AT ' + hours + ':' + minutes + ' ' + ampm;
+    }
+
+    // Get avatar color based on name
+    function getAvatarColor(name) {
+      var colors = [
+        'linear-gradient(135deg, #8B4513 0%, #A0522D 100%)',
+        'linear-gradient(135deg, #C8385C 0%, #7A1230 100%)',
+        'linear-gradient(135deg, #D4A017 0%, #8F6608 100%)',
+        'linear-gradient(135deg, #3D6B99 0%, #1F4468 100%)',
+        'linear-gradient(135deg, #9C2F52 0%, #C9527A 100%)'
+      ];
+      var index = name.charCodeAt(0) % colors.length;
+      return colors[index];
+    }
+
+    // Create wish HTML
+    function createWishHTML(wish) {
+      var initial = wish.name.charAt(0).toUpperCase();
+      var avatarColor = getAvatarColor(wish.name);
+      
+      var div = document.createElement('div');
+      div.className = 'wish-item';
+      div.setAttribute('data-aos', 'fade-up');
+      
+      div.innerHTML = 
+        '<div class="wish-avatar" style="background: ' + avatarColor + ';">' +
+          '<span>' + initial + '</span>' +
+        '</div>' +
+        '<div class="wish-content">' +
+          '<div class="wish-author">' + escapeHtml(wish.name) + '</div>' +
+          '<div class="wish-message">' + escapeHtml(wish.message) + '</div>' +
+          '<div class="wish-time">' + formatDate(wish.timestamp) + '</div>' +
+        '</div>';
+      
+      return div;
+    }
+
+    // Escape HTML to prevent XSS
+    function escapeHtml(text) {
+      var div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Display wishes
+    function displayWishes() {
+      wishesList.innerHTML = '';
+      
+      if (allWishes.length === 0) {
+        wishesDisplay.style.display = 'none';
+        return;
+      }
+
+      wishesDisplay.style.display = 'block';
+      wishesCount.textContent = allWishes.length;
+
+      var displayCount = showingAll ? allWishes.length : Math.min(displayLimit, allWishes.length);
+      var wishesToShow = allWishes.slice(0, displayCount);
+
+      wishesToShow.forEach(function(wish) {
+        wishesList.appendChild(createWishHTML(wish));
+      });
+
+      // Show/hide "View More" button
+      if (allWishes.length > displayLimit && !showingAll) {
+        viewMoreContainer.style.display = 'block';
+      } else {
+        viewMoreContainer.style.display = 'none';
+      }
+    }
+
+    // Load wishes from Firebase
+    function loadWishesFromFirebase() {
+      if (!database) return;
+
+      var wishesRef = database.ref('wishes');
+      
+      wishesRef.on('value', function(snapshot) {
+        allWishes = [];
+        var data = snapshot.val();
+        
+        if (data) {
+          Object.keys(data).forEach(function(key) {
+            allWishes.push(data[key]);
+          });
+          
+          // Sort by timestamp (newest first)
+          allWishes.sort(function(a, b) {
+            return b.timestamp - a.timestamp;
+          });
+        }
+        
+        displayWishes();
+      });
+    }
+
+    // Save wish to Firebase
+    function saveWishToFirebase(wish, callback) {
+      if (!database) {
+        callback(false);
+        return;
+      }
+
+      var wishesRef = database.ref('wishes');
+      var newWishRef = wishesRef.push();
+      
+      newWishRef.set(wish, function(error) {
+        if (error) {
+          console.error('Error saving wish:', error);
+          callback(false);
+        } else {
+          callback(true);
+        }
+      });
+    }
+
+    // Handle form submission
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var nameInput = document.getElementById('wishesName');
+      var messageInput = document.getElementById('wishesMessage');
+
+      var name = nameInput.value.trim();
+      var message = messageInput.value.trim();
+
+      if (!name || !message) {
+        alert('Please fill in both your name and message.');
+        return;
+      }
+
+      if (message.length > 500) {
+        alert('Message is too long. Please keep it under 500 characters.');
+        return;
+      }
+
+      var wish = {
+        name: name,
+        message: message,
+        timestamp: Date.now()
+      };
+
+      var btn = form.querySelector('.wishes-submit-btn');
+      var originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> SENDING...';
+      btn.disabled = true;
+
+      saveWishToFirebase(wish, function(success) {
+        if (success) {
+          // Clear form
+          nameInput.value = '';
+          messageInput.value = '';
+
+          // Show success message
+          btn.innerHTML = '<i class="fas fa-check"></i> WISH SENT!';
+
+          setTimeout(function() {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+          }, 2000);
+
+          // Scroll to wishes display
+          setTimeout(function() {
+            wishesDisplay.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 300);
+        } else {
+          alert('Unable to save your wish. Please check your internet connection and try again.');
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        }
+      });
+    });
+
+    // View More button
+    if (viewMoreBtn) {
+      viewMoreBtn.addEventListener('click', function() {
+        showingAll = true;
+        displayWishes();
+      });
+    }
+
+    // Initialize
+    if (database) {
+      loadWishesFromFirebase();
+    } else {
+      wishesDisplay.style.display = 'none';
+    }
+  }
+
   // ===== INIT =====
   document.addEventListener('DOMContentLoaded', function() {
     initMusic();
@@ -156,5 +380,6 @@
     initMobileNav();
     initSectionTracking();
     initLightbox();
+    initWishesWall();
   });
 })();
