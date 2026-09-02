@@ -13,12 +13,7 @@
   }
 
   .hero-overlay {
-    background: linear-gradient(
-      160deg,
-      rgba(250, 246, 240, 0.90) 0%,
-      rgba(242, 235, 227, 0.72) 45%,
-      rgba(250, 246, 240, 0.92) 100%
-    );
+    background: transparent;
   }
 
   .hero-content {
