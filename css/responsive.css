@@ -262,16 +262,33 @@
     margin-top: 60px;
   }
   
-  .moments-timeline {
+  /* Moments - Stack on mobile */
+  .moments-timeline-vertical {
     padding-left: 30px;
   }
   
-  .moment-item {
-    padding-left: 24px;
+  .moment-item-vertical {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 60px;
   }
   
-  .moment-content {
-    padding: 20px 24px;
+  .timeline-line {
+    left: 15px;
+  }
+  
+  .moment-item-vertical.left .timeline-circle,
+  .moment-item-vertical.right .timeline-circle {
+    left: 15px;
+    transform: translateX(-50%);
+  }
+  
+  .moment-item-vertical.left .moment-content-vertical,
+  .moment-item-vertical.right .moment-content-vertical {
+    text-align: left;
+    grid-column: 1;
+    padding-left: 40px;
+    padding-right: 0;
   }
 }
 
@@ -297,39 +314,25 @@
     padding: 32px 20px;
   }
   
-  .moments-timeline {
+  .moments-heading {
+    font-size: 38px;
+  }
+  
+  .moments-timeline-vertical {
     padding-left: 20px;
-    gap: 36px;
   }
   
-  .moment-item {
-    padding-left: 16px;
+  .moment-item-vertical.left .moment-content-vertical,
+  .moment-item-vertical.right .moment-content-vertical {
+    padding-left: 24px;
   }
   
-  .moment-item::before {
-    left: -32px;
-    width: 12px;
-    height: 12px;
-  }
-  
-  .moment-content {
-    padding: 18px 20px;
-  }
-  
-  .moment-item:hover .moment-content {
-    transform: translateX(4px);
+  .moment-title-vertical {
+    font-size: 18px;
   }
   
   .our-story-photo {
     margin: 60px auto 40px;
-  }
-  
-  .our-moments-section {
-    margin: 60px auto;
-  }
-  
-  .moments-heading {
-    margin-bottom: 40px;
   }
 }
 
