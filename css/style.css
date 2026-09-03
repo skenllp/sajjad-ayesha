@@ -553,7 +553,7 @@ body.gate-active {
   font-size: clamp(16px, 3vw, 24px);
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: var(--gold-light);
+  color: #8B1538;
   text-transform: uppercase;
   margin: 14px 0;
   opacity: 0;
@@ -575,6 +575,14 @@ body.gate-active {
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
+.hero-name-bride::first-letter {
+  font-family: var(--font-serif);
+  font-size: 1.3em;
+  font-weight: 600;
+  color: rgba(248, 235, 215, 0.95);
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
 .hero-and {
   font-family: var(--font-script);
   font-size: clamp(28px, 5vw, 48px);
@@ -589,6 +597,14 @@ body.gate-active {
   color: rgba(248, 235, 215, 0.95);
   line-height: 0.9;
   display: block;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-name-groom::first-letter {
+  font-family: var(--font-serif);
+  font-size: 1.3em;
+  font-weight: 600;
+  color: rgba(248, 235, 215, 0.95);
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
