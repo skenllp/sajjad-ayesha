@@ -65,6 +65,20 @@
 
     var opened = false;
 
+    // Prevent scroll and touch events while gate is active
+    function preventScroll(e) {
+      if (!opened && document.body.classList.contains('gate-active')) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }
+
+    // Add scroll prevention listeners
+    document.addEventListener('scroll', preventScroll, { passive: false });
+    document.addEventListener('touchmove', preventScroll, { passive: false });
+    document.addEventListener('wheel', preventScroll, { passive: false });
+
     function openGate() {
       if (opened) return;
       opened = true;
@@ -72,6 +86,17 @@
       gate.classList.add('gate-closing');
       document.body.classList.remove('gate-active');
       document.body.classList.add('page-loaded');
+      
+      // Restore scroll on body
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.touchAction = '';
+
+      // Remove scroll prevention listeners
+      document.removeEventListener('scroll', preventScroll);
+      document.removeEventListener('touchmove', preventScroll);
+      document.removeEventListener('wheel', preventScroll);
 
       window.setTimeout(function() {
         gate.classList.add('gate-hidden');
