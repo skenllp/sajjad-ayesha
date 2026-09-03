@@ -269,7 +269,15 @@
       var wishesToShow = allWishes.slice(0, displayCount);
 
       wishesToShow.forEach(function(wish) {
-        wishesList.appendChild(createWishHTML(wish));
+        var el = createWishHTML(wish);
+        wishesList.appendChild(el);
+        // Hook into the fade-up scroll animation, or reveal immediately
+        // as a fallback if the animation script hasn't loaded yet.
+        if (typeof window.observeAOS === 'function') {
+          window.observeAOS(el);
+        } else {
+          el.classList.add('aos-animate');
+        }
       });
 
       // Show/hide "View More" button

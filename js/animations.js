@@ -26,6 +26,17 @@
     elements.forEach(el => observer.observe(el));
   }
 
+  // Expose a way for dynamically-added elements (e.g. wishes loaded from
+  // Firebase after page load) to be picked up by the same fade-up animation.
+  window.observeAOS = function(el) {
+    if (observer && el) {
+      observer.observe(el);
+    } else if (el) {
+      // Observer not ready yet; just show the element immediately.
+      el.classList.add('aos-animate');
+    }
+  };
+
   // ===== NAV SCROLL EFFECT =====
   function initNav() {
     const nav = document.querySelector('.nav');
