@@ -325,7 +325,9 @@ body.gate-active {
 
 /* ── CTA Button ── */
 .bp-btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 18px 32px;
   background: linear-gradient(135deg, #6B2D1A 0%, #4A1E0E 100%);
@@ -333,7 +335,6 @@ body.gate-active {
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.2em;
   text-align: center;
   border-radius: 4px;
   margin-bottom: 28px;
@@ -341,6 +342,11 @@ body.gate-active {
   opacity: 0;
   animation: fadeUp 1s ease 2s forwards;
   transition: var(--transition-fast);
+}
+
+.bp-btn-text {
+  letter-spacing: 0.2em;
+  margin-right: -0.2em;
 }
 
 .gate-content:hover .bp-btn,
