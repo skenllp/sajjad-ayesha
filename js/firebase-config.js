@@ -3,13 +3,13 @@
 // Get them from: https://console.firebase.google.com/
 
 var firebaseConfig = {
-  apiKey: "YOUR_API_KEY_HERE",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAnbLrIfm_MUUzA9V-bvc83n1wUA2Ys0PA",
+  authDomain: "sajjad-ayesha-wedding.firebaseapp.com",
+  databaseURL: "https://sajjad-ayesha-wedding-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "sajjad-ayesha-wedding",
+  storageBucket: "sajjad-ayesha-wedding.firebasestorage.app",
+  messagingSenderId: "951387094771",
+  appId: "1:951387094771:web:dd233c820e672126b4c186"
 };
 
 // Initialize Firebase
