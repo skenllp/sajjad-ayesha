@@ -104,7 +104,7 @@ body.gate-active {
   height: 100%;
   object-fit: cover;
   object-position: center 15%;
-  filter: sepia(15%) saturate(85%) brightness(0.82);
+  filter: sepia(0%) saturate(110%) brightness(1.05) contrast(1.1);
   transform: scale(1.06);
   animation: gateSlowZoom 16s ease-in-out infinite alternate;
 }
@@ -257,14 +257,23 @@ body.gate-active {
 .bp-groom-name,
 .bp-bride-name {
   display: block;
-  font-family: var(--font-serif);
+  font-family: var(--font-script);
   font-size: clamp(34px, 8vw, 52px);
-  font-weight: 500;
-  color: rgba(35, 15, 5, 0.90);
+  font-weight: 400;
+  color: rgba(35, 15, 5, 0.95);
   line-height: 1.05;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   opacity: 0;
-  text-shadow: 0 2px 20px rgba(255,255,255,0.2);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.bp-groom-name::first-letter,
+.bp-bride-name::first-letter {
+  font-family: var(--font-serif);
+  font-size: 1.3em;
+  font-weight: 700;
+  color: rgba(35, 15, 5, 0.95);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
 .bp-groom-name {
@@ -330,15 +339,16 @@ body.gate-active {
   justify-content: center;
   width: 100%;
   padding: 18px 32px;
-  background: linear-gradient(135deg, #6B2D1A 0%, #4A1E0E 100%);
+  background: linear-gradient(135deg, #4A0E24 0%, #8A1739 50%, #5C1030 100%);
   color: rgba(248, 235, 215, 0.95);
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.2em;
   text-align: center;
   border-radius: 4px;
   margin-bottom: 28px;
-  box-shadow: 0 4px 20px rgba(80, 30, 10, 0.35);
+  box-shadow: 0 4px 20px rgba(74, 14, 36, 0.4);
   opacity: 0;
   animation: fadeUp 1s ease 2s forwards;
   transition: var(--transition-fast);
@@ -351,8 +361,8 @@ body.gate-active {
 
 .gate-content:hover .bp-btn,
 .gate-content:active .bp-btn {
-  background: linear-gradient(135deg, #7E3520 0%, #5A2510 100%);
-  box-shadow: 0 8px 28px rgba(80, 30, 10, 0.45);
+  background: linear-gradient(135deg, #5C1030 0%, #4A0E24 100%);
+  box-shadow: 0 8px 28px rgba(74, 14, 36, 0.6);
 }
 
 /* ── Location ── */
@@ -510,7 +520,7 @@ body.gate-active {
   position: relative;
   z-index: 3;
   text-align: center;
-  padding: 40px 20px;
+  padding: 10px 20px 40px;
   max-width: 560px;
   width: 100%;
   margin: 0 auto;
@@ -665,7 +675,7 @@ body.gate-active {
 }
 
 .hero-date {
-  margin-top: 32px;
+  margin-top: 80px;
   opacity: 0;
   animation: fadeUp 1s ease 1.6s forwards;
   display: inline-block;
