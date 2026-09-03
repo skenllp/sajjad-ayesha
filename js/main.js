@@ -180,6 +180,37 @@
     var wishesDisplay = document.getElementById('wishesDisplay');
     var wishesList = document.getElementById('wishesList');
     var wishesCount = document.getElementById('wishesCount');
+
+    // ── Admin mode ────────────────────────────────────────────
+    // Activated by adding ?admin=1 to the URL, then entering the
+    // password set in js/config.js (admin.password). Once entered
+    // correctly, stays active for the rest of the browser session.
+    var isAdmin = false;
+    (function checkAdminMode() {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('admin') !== '1') return;
+
+      if (sessionStorage.getItem('wishesAdminAuthed') === 'true') {
+        isAdmin = true;
+        return;
+      }
+
+      var configuredPassword = (window.WEDDING_CONFIG && window.WEDDING_CONFIG.admin && window.WEDDING_CONFIG.admin.password) || null;
+      if (!configuredPassword) return;
+
+      var entered = window.prompt('Admin password:');
+      if (entered === configuredPassword) {
+        sessionStorage.setItem('wishesAdminAuthed', 'true');
+        isAdmin = true;
+      } else if (entered !== null) {
+        alert('Incorrect password.');
+      }
+    })();
+
+    if (isAdmin) {
+      var adminBadge = document.getElementById('wishesAdminBadge');
+      if (adminBadge) adminBadge.style.display = 'inline-flex';
+    }
     var viewMoreContainer = document.getElementById('viewMoreContainer');
     var viewMoreBtn = document.getElementById('viewMoreBtn');
 
@@ -242,6 +273,26 @@
           '<div class="wish-message">' + escapeHtml(wish.message) + '</div>' +
           '<div class="wish-time">' + formatDate(wish.timestamp) + '</div>' +
         '</div>';
+
+      if (isAdmin && wish.id) {
+        var deleteBtn = document.createElement('button');
+        deleteBtn.type = 'button';
+        deleteBtn.className = 'wish-delete-btn';
+        deleteBtn.setAttribute('aria-label', 'Delete this wish');
+        deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+        deleteBtn.addEventListener('click', function() {
+          if (window.confirm('Delete the wish from "' + wish.name + '"? This cannot be undone.')) {
+            database.ref('wishes/' + wish.id).remove(function(error) {
+              if (error) {
+                alert('Could not delete: ' + error.message);
+              }
+              // No manual re-render needed — the Firebase .on('value')
+              // listener will pick up the change and refresh the list.
+            });
+          }
+        });
+        div.appendChild(deleteBtn);
+      }
       
       return div;
     }
@@ -300,7 +351,9 @@
         
         if (data) {
           Object.keys(data).forEach(function(key) {
-            allWishes.push(data[key]);
+            var wish = data[key];
+            wish.id = key;
+            allWishes.push(wish);
           });
           
           // Sort by timestamp (newest first)

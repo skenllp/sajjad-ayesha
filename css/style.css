@@ -3200,6 +3200,7 @@ footer {
 }
 
 .wish-item {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: 16px;
@@ -3210,6 +3211,44 @@ footer {
   border: 1px solid rgba(212,160,23,0.1);
   text-align: left;
   transition: var(--transition);
+}
+
+.wish-delete-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(178,34,52,0.08);
+  color: #B22234;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.wish-delete-btn:hover {
+  background: #B22234;
+  color: var(--white);
+  transform: scale(1.08);
+}
+
+.wishes-admin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: rgba(178,34,52,0.08);
+  color: #B22234;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .wish-item:hover {

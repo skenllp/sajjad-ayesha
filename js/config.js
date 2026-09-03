@@ -139,4 +139,13 @@ window.WEDDING_CONFIG = {
     tagline:     'Best Compliments from Dear and Near Ones',
   },
 
+  /* ── ADMIN (Wishes Wall moderation) ─────────────────────────
+     Visit the site with ?admin=1 added to the URL, e.g.:
+       https://your-site.com/?admin=1
+     You'll be asked for this password once per browser session.
+     CHANGE THIS to something only you know before sharing the link. */
+  admin: {
+    password: 'SajjadAyesha2026',
+  },
+
 };
