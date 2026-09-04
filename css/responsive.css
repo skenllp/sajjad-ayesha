@@ -358,6 +358,36 @@
   .our-story-photo {
     margin: 60px auto 40px;
   }
+  
+  /* Mobile-specific moments timeline */
+  .moments-timeline-vertical {
+    max-width: 100%;
+    padding: 20px 0;
+  }
+  
+  .moment-item-vertical {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .moment-content-vertical {
+    padding: 0 8px;
+  }
+  
+  .moment-date-vertical {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  
+  .moment-title-vertical {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .moment-description-vertical {
+    font-size: 13px;
+    line-height: 1.4;
+  }
 }
 
 /* ===== CONTACT SECTION RESPONSIVE ===== */
