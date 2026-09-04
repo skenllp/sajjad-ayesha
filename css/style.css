@@ -2639,6 +2639,8 @@ footer {
 .moments-timeline-vertical {
   position: relative;
   padding: 40px 0;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Central vertical line */
@@ -2675,9 +2677,9 @@ footer {
   position: relative;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  gap: 40px;
+  gap: 20px;
   align-items: flex-start;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .moment-item-vertical.left {
