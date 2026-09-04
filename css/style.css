@@ -2048,8 +2048,10 @@ footer {
 }
 
 .sibling-name {
-  font-style: italic;
-  color: var(--text-light);
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 2vw, 17px);
+  color: var(--text-medium);
+  line-height: 2;
 }
 
 .parent-address {
