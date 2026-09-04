@@ -114,7 +114,7 @@ body.gate-active {
   height: 100%;
   object-fit: cover;
   object-position: center 15%;
-  filter: sepia(0%) saturate(110%) brightness(1.05) contrast(1.1);
+  filter: sepia(0%) saturate(110%) brightness(1.05) contrast(1.1) blur(2px);
   transform: scale(1.06);
   animation: gateSlowZoom 16s ease-in-out infinite alternate;
 }
