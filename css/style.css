@@ -2018,8 +2018,6 @@ footer {
 
 .parents-card-siblings {
   margin-top: 24px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(212,160,23,0.15);
   font-family: var(--font-sans);
   font-size: clamp(14px, 1.8vw, 16px);
   color: var(--text-medium);
@@ -2055,6 +2053,8 @@ footer {
 
 .parents-card-address {
   margin-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(212,160,23,0.2);
   font-family: var(--font-sans);
   font-size: clamp(15px, 2vw, 17px);
   color: var(--text-medium);
@@ -2655,6 +2655,7 @@ footer {
   border-radius: 50%;
   box-shadow: 0 0 0 4px rgba(212,160,23,0.3), 0 0 20px rgba(212,160,23,0.5);
   z-index: 2;
+  top: 45px;
 }
 
 /* Moment items */
@@ -2663,7 +2664,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   gap: 40px;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 80px;
 }
 
