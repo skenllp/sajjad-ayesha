@@ -366,27 +366,28 @@
   }
   
   .moment-item-vertical {
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: 8px;
+    margin-bottom: 16px;
   }
   
   .moment-content-vertical {
-    padding: 0 8px;
+    padding: 0 4px;
   }
   
   .moment-date-vertical {
     font-size: 11px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   
   .moment-title-vertical {
     font-size: 16px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   
   .moment-description-vertical {
     font-size: 13px;
     line-height: 1.4;
+    margin-bottom: 0;
   }
 }
 
