@@ -4,6 +4,22 @@
 
   var CFG = window.WEDDING_CONFIG || {};
 
+  // ===== REAL VIEWPORT HEIGHT FIX (iOS Safari address-bar bug) =====
+  // iOS Safari's 100vh/100dvh doesn't reliably match the true visible
+  // viewport on some iPhones, leaving a white gap below fixed elements
+  // like the gate. We measure the real height with JS and expose it as
+  // a CSS variable that the gate/body use instead.
+  function setRealViewportHeight() {
+    var vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', vh + 'px');
+  }
+  setRealViewportHeight();
+  window.addEventListener('resize', setRealViewportHeight);
+  window.addEventListener('orientationchange', setRealViewportHeight);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', setRealViewportHeight);
+  }
+
   // ===== BACKGROUND MUSIC =====
   function initMusic() {
     var audio     = document.getElementById('bg-music');

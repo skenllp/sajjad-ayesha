@@ -55,6 +55,9 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  /* Safety net: matches the gate's dark background so any tiny rounding
+     gap at the bottom on iOS blends in instead of showing a white/cream line */
+  background-color: #2C1A12;
 }
 
 body {
@@ -72,13 +75,20 @@ body.gate-active {
   width: 100%;
   height: 100vh;
   height: 100dvh;
+  height: calc(var(--vh, 1vh) * 100);
   touch-action: none;
   -webkit-overflow-scrolling: none;
 }
 
 #gate {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -2px; /* extra pixel of overlap swallows any iOS rounding gap */
+  height: 100vh;
+  height: 100dvh;
+  height: calc(var(--vh, 1vh) * 100 + 2px);
   z-index: 9999;
   overflow: hidden;
   background: #2C1A12;
