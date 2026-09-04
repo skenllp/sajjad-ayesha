@@ -323,35 +323,6 @@
     padding: 40px 24px;
     margin-top: 60px;
   }
-  
-  /* Moments - Stack on mobile */
-  .moments-timeline-vertical {
-    padding-left: 30px;
-  }
-  
-  .moment-item-vertical {
-    grid-template-columns: 1fr;
-    gap: 0;
-    margin-bottom: 60px;
-  }
-  
-  .timeline-line {
-    left: 15px;
-  }
-  
-  .moment-item-vertical.left .timeline-circle,
-  .moment-item-vertical.right .timeline-circle {
-    left: 15px;
-    transform: translateX(-50%);
-  }
-  
-  .moment-item-vertical.left .moment-content-vertical,
-  .moment-item-vertical.right .moment-content-vertical {
-    text-align: left;
-    grid-column: 1;
-    padding-left: 40px;
-    padding-right: 0;
-  }
 }
 
 @media (max-width: 600px) {
@@ -378,15 +349,6 @@
   
   .moments-heading {
     font-size: 38px;
-  }
-  
-  .moments-timeline-vertical {
-    padding-left: 20px;
-  }
-  
-  .moment-item-vertical.left .moment-content-vertical,
-  .moment-item-vertical.right .moment-content-vertical {
-    padding-left: 24px;
   }
   
   .moment-title-vertical {
